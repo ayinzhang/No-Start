@@ -10,7 +10,7 @@ public class UI_BGM : MonoBehaviour
 
     void Start()
     {
-        audio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        audio = GameObject.Find("Title").GetComponent<AudioSource>();
         slider = GetComponent<Slider>(); slider.value = audio.volume;
     }
 

@@ -5,22 +5,16 @@ using UnityEngine.UI;
 
 public class Typer : MonoBehaviour
 {
+    public Text character;
+    public AudioSource audioSource;
+    public Transform frame;
     public float interval = 0.15f;
-    public string words;
-    Text character;
-    AudioSource audioSource;
 
-    IEnumerator StartTyper()
+    public IEnumerator StartTyper(string words)
     {
         audioSource.Play();
-        for (int i = 0; i <= words.Length; i++) { character.text = words.Substring(0, i);yield return new WaitForSecondsRealtime(interval); }
+        for (int i = 0; i <= words.Length; i++) { character.text = words.Substring(0, i);frame.localScale = 1.1f * transform.localScale; yield return new WaitForSecondsRealtime(interval); }
         audioSource.Stop();
-    }
-
-    void Start()
-    {
-        character = GetComponent<Text>();
-        audioSource = GetComponent<AudioSource>();
-        StartCoroutine("StartTyper");
+        yield return new WaitForSecondsRealtime(1.5f);character.text = "";frame.localScale = new Vector3(0,0,0);
     }
 }
