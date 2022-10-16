@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Trap
+  - Ladder
+  - Mushroom
+  - Ground
+  - Enemy
+  - Cherry
   layers:
   - Default
   - TransparentFX
@@ -40,4 +46,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: back
+    uniqueID: 3633233223
+    locked: 0
+  - name: mid
+    uniqueID: 584776597
+    locked: 0
+  - name: fore
+    uniqueID: 707471655
     locked: 0

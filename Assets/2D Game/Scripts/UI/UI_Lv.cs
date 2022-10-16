@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UI_Text : MonoBehaviour
+public class UI_Lv : MonoBehaviour
 {
     string s;
 

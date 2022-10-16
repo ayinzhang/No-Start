@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rigidbody2D;
     CapsuleCollider2D collider;
     Controls controls;
+    Typer typer;
     public AudioClip dead;
     public AudioClip enemy_dead;
     public AudioClip cherry;
@@ -39,18 +40,39 @@ public class Player : MonoBehaviour
     public AudioClip jump;
 
 
-    IEnumerator Dead()
+    IEnumerator EnemyDead()
     {
-        audio.clip = dead; audio.Play();
+        audio.clip = dead; audio.Play();Save.deadTime++;
         Destroy(collider); rigidbody2D.velocity = new Vector2(0, 10);
         isDead = true; animator.SetBool("IsDead", true);
         yield return new WaitForSecondsRealtime(3f);
         isDead = false; lv = Save.lv; jumpTime = Save.jumpTime; SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Save.leavedwords = "淦，下次给他干回来";
+    }
+
+    IEnumerator DropDead()
+    {
+        audio.clip = dead; audio.Play(); Save.deadTime++;
+        Destroy(collider); rigidbody2D.velocity = new Vector2(0, 10);
+        isDead = true; animator.SetBool("IsDead", true);
+        yield return new WaitForSecondsRealtime(3f);
+        isDead = false; lv = Save.lv; jumpTime = Save.jumpTime; SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Save.leavedwords = "下面的区域以后再来探索吧";
+    }
+
+    IEnumerator TrapDead()
+    {
+        audio.clip = dead; audio.Play(); Save.deadTime++;
+        Destroy(collider); rigidbody2D.velocity = new Vector2(0, 10);
+        isDead = true; animator.SetBool("IsDead", true);
+        yield return new WaitForSecondsRealtime(3f);
+        isDead = false; lv = Save.lv; jumpTime = Save.jumpTime; SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Save.leavedwords = "陷阱杀!（反向）";
     }
 
     IEnumerator Mushroom()
     {
-        isDead = true;
+        isDead = true; Save.deadTime++;
         for (float i = 1; i <= 15; i += 0.1f)
         {
             if (transform.localScale.x > 0) transform.localScale = new Vector3(i, i, i);
@@ -59,6 +81,7 @@ public class Player : MonoBehaviour
         }
         animator.SetBool("IsDead", true); yield return new WaitForSecondsRealtime(1.5f);
         isDead = false; lv = Save.lv; jumpTime = Save.jumpTime; SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Save.leavedwords = "虽然不是马里奥，但也确实能变大...";
     }
 
     void Start()
@@ -68,6 +91,8 @@ public class Player : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider = GetComponent<CapsuleCollider2D>();
         controls = new Controls();
+        typer = GameObject.Find("Canvas/Text").GetComponent<Typer>();
+        if (Save.leavedwords != null) { typer.StartCoroutine("StartTyper", Save.leavedwords); Save.leavedwords = null; }
         controls.GamePlay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.GamePlay.Move.canceled += ctx => move = Vector2.zero;
         controls.GamePlay.Jump.started += ctx => isJump = true;
@@ -130,7 +155,7 @@ public class Player : MonoBehaviour
             collider.size = new Vector2(0.901413f, 1.319401f);
         }
         //Dead
-        if (!isDead && transform.position.y < -10) { isDead = true; StartCoroutine("Dead"); }
+        if (!isDead && transform.position.y < -10) { isDead = true; StartCoroutine("DropDead"); }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -140,15 +165,15 @@ public class Player : MonoBehaviour
             audio.clip = cherry; audio.Play();
             jumpTime++; Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Gem"))
-        {
-            audio.clip = gem; audio.Play();
-            if (jumpTime < ++Save.jumpTime) jumpTime = Save.jumpTime;
-            Destroy(other.gameObject);
-        }
+        //else if (other.gameObject.CompareTag("Gem"))
+        //{
+        //    audio.clip = gem; audio.Play();
+        //    if (jumpTime < ++Save.jumpTime) jumpTime = Save.jumpTime;
+        //    Destroy(other.gameObject);
+        //}
         else if (other.gameObject.CompareTag("Trap"))
         {
-            if (!isDead) StartCoroutine("Dead");
+            if (!isDead) StartCoroutine("TrapDead");
         }
         else if (other.gameObject.CompareTag("Mushroom"))
         {
@@ -160,7 +185,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && !other.gameObject.GetComponent<Animator>().GetBool("IsDead"))
         {
-            if (!isDead && other.GetContact(0).normal.y < 0.9f) { isDead = true; StartCoroutine("Dead"); }
+            if (!isDead && other.GetContact(0).normal.y < 0.9f) { isDead = true; StartCoroutine("EnemyDead"); }
             else
             {
                 audio.clip = enemy_dead; audio.Play();
@@ -170,7 +195,7 @@ public class Player : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Trap"))
         {
-            if (!isDead) StartCoroutine("Dead");
+            if (!isDead) StartCoroutine("TrapDead");
         }
         else if (other.gameObject.CompareTag("Mushroom"))
         {

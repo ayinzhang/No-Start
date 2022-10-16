@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +9,11 @@ public class Fake_House : MonoBehaviour
 
     void Update()
     {
-        if (isDoor && Player.move.y > 0) SceneManager.LoadScene("2D Game");
+        if (isDoor && Player.move.y > 0) 
+        { 
+            SceneManager.LoadScene("2D Game");Save.returnTime++;
+            Save.leavedwords = "起点竟然是终点，怎么绘世呢？"; 
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)
