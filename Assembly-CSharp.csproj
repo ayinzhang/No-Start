@@ -53,44 +53,62 @@
     <UnityVersion>2020.3.20f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\2D Game\Scripts\Trap\Mushroom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_Refresh.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Past Level\Scripts\Typer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\Past Level\Scripts\UI_Start.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_Acoustics.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_BGM.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Frog.cs" />
     <Compile Include="Assets\Main Menu\Scripts\GaussianBlur.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Trap\Coin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Eagle.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Player_UpChecker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Mouse.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_Background.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Player_GroundChecker.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Audio\Supermario.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_PanelPause.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_Title.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_Quit.cs" />
+    <Compile Include="Assets\Past Level\Scripts\UI_Exit.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Player_ForeChecker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Trap\Prickle.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_New.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Trap\Cube_Mushroom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Trap\Cube_Coin.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_Home.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Item\House.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Main Menu\Scripts\PostEffectsBase.cs" />
     <Compile Include="Assets\Main Menu\Scripts\MotionBlur.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Item\Cube.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\InputSystem\Controls.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Item\Ladder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -103,8 +121,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Past Level\Scripts\UI_Start.cs" />
-    <Compile Include="Assets\Past Level\Scripts\UI_Exit.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Item\UI_Text.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Item\Platform.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Slug.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Piranha.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Creature\Bee.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Item\Trap.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Save.cs" />
+    <Compile Include="Assets\2D Game\Scripts\Item\Fake_House.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -740,6 +764,12 @@
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
