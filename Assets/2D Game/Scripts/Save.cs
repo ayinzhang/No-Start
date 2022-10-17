@@ -10,4 +10,5 @@ public class Save : MonoBehaviour
     public static string leavedwords;
     public static int deadTime;
     public static int returnTime;
+    public static int transmitTime;
 }
