@@ -88,6 +88,7 @@
     <Compile Include="Assets\3D Game\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\2D Game\Scripts\Creature\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Present Level\Scripts\Pre_Start.cs" />
     <Compile Include="Assets\2D Game\Scripts\Creature\Player_GroundChecker.cs" />
     <Compile Include="Assets\2D Game\Scripts\Audio\Supermario.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
@@ -123,7 +124,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Main Menu\Scripts\PostEffectsBase.cs" />
-    <Compile Include="Assets\Present Level\Scripts\Pre_Start.cs" />
     <Compile Include="Assets\Main Menu\Scripts\MotionBlur.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\2D Game\Scripts\Item\Cube.cs" />
@@ -144,7 +144,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Future Level\Scripts\Ftr_Start.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3D Game\Standard Assets\Shaders\WorldCoordDiffuse.shader" />

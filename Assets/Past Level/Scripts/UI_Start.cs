@@ -11,7 +11,7 @@ public class UI_Start : MonoBehaviour
 
     IEnumerator Next()
     {
-        typer.StartCoroutine("StartTyper", "看来我们得好好聊聊");yield return new WaitForSecondsRealtime(2.5f);
+        typer.StartCoroutine("StartTyper", "好吧好吧，我知道了");yield return new WaitForSecondsRealtime(2.5f);
         SceneManager.LoadScene("2D Game"); Save.leavedwords = "既然你如此锲而不舍，那这正好有个游戏";
     }
 
