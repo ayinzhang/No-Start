@@ -1,0 +1,35 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Ftr_Start : MonoBehaviour
+{
+    public Typer typer;
+    public GameObject photo;
+    public Transform pos;
+    int cnt;
+    Vector3 nor;
+
+    IEnumerator RunAway()
+    {
+        typer.StartCoroutine("StartTyper", "其实...准确说来是跑路了"); yield return new WaitForSecondsRealtime(2.5f);
+        photo.SetActive(true);
+        for (float i = 2; i >= 1; i -= 0.02f) { photo.transform.localScale = new Vector3(i, i, i); yield return new WaitForSecondsRealtime(0.02f); }
+        for(int i=0;i<100;i++) { photo.transform.position += nor/100; yield return new WaitForSecondsRealtime(0.02f); }
+    }
+
+    void Start()
+    {
+        nor = pos.position - photo.transform.position;
+        typer.StartCoroutine("StartTyper", "恭喜，打破了无限的回环");
+    }
+
+    public void OnClick()
+    {
+        cnt++;
+        if (cnt == 1) typer.StartCoroutine("StartTyper", "你...不会还想");
+        else if (cnt == 2) typer.StartCoroutine("StartTyper", "没游戏了，真没了，制作者根本就没做");
+        else if (cnt == 3) StartCoroutine("RunAway");
+        else if (cnt == 5) StartCoroutine("Next");
+    }
+}

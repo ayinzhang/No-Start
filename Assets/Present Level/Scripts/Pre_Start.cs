@@ -23,6 +23,7 @@ public class Pre_Start : MonoBehaviour
     {
         cnt++;
         if (cnt == 1) typer.StartCoroutine("StartTyper", "等会...你该不会还想玩吧");
+        else if (cnt == 2) typer.StartCoroutine("StartTyper", "......");
         else if (cnt == 3) StartCoroutine("Next");
     }
 }
