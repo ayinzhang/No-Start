@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
 public class Pre_Start : MonoBehaviour
@@ -8,6 +9,7 @@ public class Pre_Start : MonoBehaviour
     public Typer typer;
     public GameObject photo;
     public Transform pos;
+    public VideoPlayer movie;
     int cnt;
     Vector3 nor;
 
@@ -17,6 +19,17 @@ public class Pre_Start : MonoBehaviour
         photo.SetActive(true);
         for (float i = 2; i >= 1; i -= 0.02f) { photo.transform.localScale = new Vector3(i, i, i); yield return new WaitForSecondsRealtime(0.02f); }
         for(int i=0;i<100;i++) { photo.transform.position += nor/100; yield return new WaitForSecondsRealtime(0.02f); }
+    }
+
+    IEnumerator Play()
+    {
+        typer.StartCoroutine("StartTyper", "没完没了了是吧? "); yield return new WaitForSecondsRealtime(2.5f);
+        GetComponent<AudioSource>().Play();
+    }
+
+    IEnumerator Study()
+    {
+        movie.Play(); yield return new WaitForSecondsRealtime(16f);Destroy(movie);
     }
 
     IEnumerator Next()
@@ -37,6 +50,8 @@ public class Pre_Start : MonoBehaviour
         if (cnt == 1) typer.StartCoroutine("StartTyper", "你...不会还想");
         else if (cnt == 2) typer.StartCoroutine("StartTyper", "没了，制作者根本就没怎么做");
         else if (cnt == 3) StartCoroutine("RunAway");
-        else if (cnt == 5) StartCoroutine("Next");
+        else if (cnt == 5) StartCoroutine("Play");
+        else if (cnt == 10) movie.Play();//StartCoroutine("Study");
+        else if (cnt == 20) StartCoroutine("Next");
     }
 }

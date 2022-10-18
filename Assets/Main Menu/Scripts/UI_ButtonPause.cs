@@ -7,9 +7,16 @@ public class UI_ButtonPause : MonoBehaviour
 {
     public Sprite play;
     public Sprite pause;
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void OnClick()
     {
+        audioSource.Play();
         if (gameObject.GetComponent<Image>().sprite == play)
         {
             gameObject.transform.localScale = new Vector3(1, 1, 1);

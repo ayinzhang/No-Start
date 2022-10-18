@@ -5,8 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class UI_New : MonoBehaviour
 {
+    AudioSource audioSource;
+
+    IEnumerator Next()
+    {
+        audioSource.Play();yield return new WaitForSecondsRealtime(0.8f);
+        SceneManager.LoadScene("Past Level");
+    }
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void OnClick()
     {
-        SceneManager.LoadScene("Past Level");
+        StartCoroutine("Next");
     }
 }

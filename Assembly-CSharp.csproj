@@ -144,6 +144,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\Future Level\Scripts\Error.cs" />
+    <Compile Include="Assets\End Menu\Scripts\End_Background.cs" />
+    <Compile Include="Assets\Main Menu\Scripts\UI_ReStart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3D Game\Standard Assets\Shaders\WorldCoordDiffuse.shader" />
