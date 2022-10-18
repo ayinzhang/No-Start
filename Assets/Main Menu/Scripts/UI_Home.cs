@@ -11,7 +11,7 @@ public class UI_Home : MonoBehaviour
     {
         audioSource.Play(); yield return new WaitForSecondsRealtime(0.8f);
         Time.timeScale = 1; Save.savedScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene("Main Menu");;
+        SceneManager.LoadScene("Main Menu");
     }
 
     void Start()

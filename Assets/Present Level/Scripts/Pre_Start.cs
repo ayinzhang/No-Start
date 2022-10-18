@@ -10,8 +10,11 @@ public class Pre_Start : MonoBehaviour
     public GameObject photo;
     public Transform pos;
     public VideoPlayer movie;
+    public AudioClip play;
+    public AudioClip click;
     int cnt;
     Vector3 nor;
+    AudioSource audioSource;
 
     IEnumerator RunAway()
     {
@@ -24,7 +27,7 @@ public class Pre_Start : MonoBehaviour
     IEnumerator Play()
     {
         typer.StartCoroutine("StartTyper", "没完没了了是吧? "); yield return new WaitForSecondsRealtime(2.5f);
-        GetComponent<AudioSource>().Play();
+        audioSource.clip = play; audioSource.Play(); yield return new WaitForSecondsRealtime(4f); audioSource.clip = click;
     }
 
     IEnumerator Study()
@@ -40,13 +43,13 @@ public class Pre_Start : MonoBehaviour
 
     void Start()
     {
-        nor = pos.position - photo.transform.position;
+        audioSource = GetComponent<AudioSource>(); nor = pos.position - photo.transform.position;
         typer.StartCoroutine("StartTyper", "恭喜，打破了无限的回环");
     }
 
     public void OnClick()
     {
-        cnt++;
+        cnt++; audioSource.Play();
         if (cnt == 1) typer.StartCoroutine("StartTyper", "你...不会还想");
         else if (cnt == 2) typer.StartCoroutine("StartTyper", "没了，制作者根本就没怎么做");
         else if (cnt == 3) StartCoroutine("RunAway");

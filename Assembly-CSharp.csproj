@@ -68,6 +68,7 @@
     <Compile Include="Assets\Past Level\Scripts\UI_Start.cs" />
     <Compile Include="Assets\3D Game\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\3D Game\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
+    <Compile Include="Assets\Main Menu\Scripts\UI_ReStart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\3D Game\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\3D Game\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
@@ -112,7 +113,6 @@
     <Compile Include="Assets\2D Game\Scripts\Trap\Prickle.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_New.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\3D Game\Scrpts\RenderCubemapWizard.cs" />
     <Compile Include="Assets\3D Game\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\2D Game\Scripts\Trap\Cube_Mushroom.cs" />
     <Compile Include="Assets\3D Game\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
@@ -120,6 +120,7 @@
     <Compile Include="Assets\2D Game\Scripts\Trap\Cube_Coin.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_Home.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Future Level\Scripts\Error.cs" />
     <Compile Include="Assets\2D Game\Scripts\Item\House.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -140,13 +141,11 @@
     <Compile Include="Assets\2D Game\Scripts\Save.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\End Menu\Scripts\End_Background.cs" />
     <Compile Include="Assets\Main Menu\Scripts\UI_ButtonPause.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Future Level\Scripts\Error.cs" />
-    <Compile Include="Assets\End Menu\Scripts\End_Background.cs" />
-    <Compile Include="Assets\Main Menu\Scripts\UI_ReStart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3D Game\Standard Assets\Shaders\WorldCoordDiffuse.shader" />
