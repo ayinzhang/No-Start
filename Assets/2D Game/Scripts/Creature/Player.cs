@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    int rand;
     int jumpCnt = 0;
     bool isJump = false;
     bool isCrouching = false;
@@ -47,7 +48,9 @@ public class Player : MonoBehaviour
         isDead = true; animator.SetBool("IsDead", true);
         yield return new WaitForSecondsRealtime(3f);
         isDead = false; lv = Save.lv; jumpTime = Save.jumpTime; SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Save.leavedwords = "淦，下次给他干回来";
+        rand = UnityEngine.Random.Range(0, 2);
+        if(rand==0) Save.leavedwords = "淦，下次给他干回来";
+        else Save.leavedwords = "直接（被）拿捏";
     }
 
     IEnumerator DropDead()
@@ -57,7 +60,9 @@ public class Player : MonoBehaviour
         isDead = true; animator.SetBool("IsDead", true);
         yield return new WaitForSecondsRealtime(3f);
         isDead = false; lv = Save.lv; jumpTime = Save.jumpTime; SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Save.leavedwords = "下面的区域以后再来探索吧";
+        rand = UnityEngine.Random.Range(0, 2);
+        if (rand == 0) Save.leavedwords = "下面的区域以后再来探索吧";
+        else Save.leavedwords = "下不去，怎么想都下不去吧";
     }
 
     IEnumerator TrapDead()
@@ -67,7 +72,9 @@ public class Player : MonoBehaviour
         isDead = true; animator.SetBool("IsDead", true);
         yield return new WaitForSecondsRealtime(3f);
         isDead = false; lv = Save.lv; jumpTime = Save.jumpTime; SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Save.leavedwords = "陷阱杀!（反向）";
+        rand = UnityEngine.Random.Range(0, 2);
+        if(rand==0) Save.leavedwords = "陷阱杀!（反向）";
+        else Save.leavedwords = "你自己闯进来的";
     }
 
     IEnumerator Mushroom()
@@ -81,7 +88,9 @@ public class Player : MonoBehaviour
         }
         animator.SetBool("IsDead", true); yield return new WaitForSecondsRealtime(1.5f);
         isDead = false; lv = Save.lv; jumpTime = Save.jumpTime; SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Save.leavedwords = "虽然不是马里奥，但也确实能变大...";
+        rand = UnityEngine.Random.Range(0, 2);
+        if (rand == 0) Save.leavedwords = "虽然不是马里奥，但也确实能变大...";
+        else Save.leavedwords = "道理我都懂，可是狐狸为什么这么大";
     }
 
     void Start()

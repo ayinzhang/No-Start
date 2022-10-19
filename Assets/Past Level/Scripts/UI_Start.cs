@@ -25,7 +25,8 @@ public class UI_Start : MonoBehaviour
     public void OnClick()
     {
         audioSource.Play(); transform.position = trans[(++current) % 5].position;
-        if (current == 1) typer.StartCoroutine("StartTyper", "额，直接退出啊，莫非你还真的想玩这个？");
+        if (current == 1) typer.StartCoroutine("StartTyper", "额，直接退出啊，莫非你还真的想玩这个");
+        else if(current==3) typer.StartCoroutine("StartTyper", "这...让我考虑下先");
         else if (current == 5) StartCoroutine("Next");
     }    
 }

@@ -12,7 +12,7 @@ public class Error : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(3f);
         for (int i = 0; i < 70; i++) { gameObjects[i].SetActive(true); yield return new WaitForSecondsRealtime(0.15f); }
-        yield return new WaitForSecondsRealtime(3f);audioSource.Play();
+        yield return new WaitForSecondsRealtime(3f);audioSource.Play(); gameObjects[70].SetActive(true);
         yield return new WaitForSecondsRealtime(3f);SceneManager.LoadScene("End Menu");
     }
 

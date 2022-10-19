@@ -32,7 +32,8 @@ public class Pre_Start : MonoBehaviour
 
     IEnumerator Study()
     {
-        movie.Play(); yield return new WaitForSecondsRealtime(16f);Destroy(movie);
+        movie.Play(); yield return new WaitForSecondsRealtime(16f);
+        typer.StartCoroutine("StartTyper", "讲真玩这不如晚上八点沙城找龙叔去");
     }
 
     IEnumerator Next()
@@ -54,7 +55,7 @@ public class Pre_Start : MonoBehaviour
         else if (cnt == 2) typer.StartCoroutine("StartTyper", "没了，制作者根本就没怎么做");
         else if (cnt == 3) StartCoroutine("RunAway");
         else if (cnt == 5) StartCoroutine("Play");
-        else if (cnt == 10) movie.Play();//StartCoroutine("Study");
+        else if (cnt == 10) StartCoroutine("Study");
         else if (cnt == 20) StartCoroutine("Next");
     }
 }

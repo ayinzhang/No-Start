@@ -12,7 +12,9 @@ public class Fake_House : MonoBehaviour
         if (isDoor && Player.move.y > 0) 
         { 
             SceneManager.LoadScene("2D Game");Save.returnTime++;
-            Save.leavedwords = "起点竟然是终点，怎么绘世呢？"; 
+            if (Save.returnTime == 1) Save.leavedwords = "怎么绘世";
+            else if (Save.returnTime == 2) Save.leavedwords = "这好像是个循环";
+            else Save.leavedwords = "我们不会就这样被困这了吧";
         }
     }
 
